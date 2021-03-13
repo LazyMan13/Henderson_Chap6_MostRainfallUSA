@@ -4,6 +4,7 @@
         Dim decRain As Decimal
         Dim decTotal As Decimal = 0D
         Dim decAvg As Decimal
+        Dim decAvgRd As Decimal
         Dim intMaxNum As Integer = 12
         Dim intNum As Integer = 1
         Dim strInBoxMsg As String = "Enter the Rainfall for month #"
@@ -41,7 +42,10 @@
         If intNum > 1 Then
             decRain += decTotal
             decAvg = decRain / intNum
-            lblAverage.Text = "Average Rainfall a Month is " & decAvg.ToString() & " inches"
+            'decAvgRd = Math.Round(decAvg, 1)
+            lblAverage.Text = $"Average Rainfall a Month is {decAvg:F1} inches"
+            'lblAverage.Text = "Average Rainfall a Month is " & decAvgRd.ToString() & " inches"
+
         Else
             lblAverage.Text = "No Rain value entered"
         End If
